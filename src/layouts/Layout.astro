@@ -6,13 +6,17 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Promoting clean energy to Georgia Tech students through the GT Energy Solutions VIP.' } = Astro.props;
+const {
+  title,
+  description = 'Why Georgia Tech students should care about clean energy (UN SDG 7), and how to get involved in the energy initiatives on campus.',
+} = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/issue', label: 'The Issue' },
+  { href: '/why-it-matters', label: 'Why It Matters' },
   { href: '/get-involved', label: 'Get Involved' },
+  { href: '/resources', label: 'Resources' },
 ];
 ---
 
@@ -23,13 +27,13 @@ const links = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Clean Energy at Georgia Tech</title>
+    <title>{title} | Power Up GT</title>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap bar">
-        <a href="/" class="brand" aria-label="Clean Energy at Georgia Tech, home">
-          Clean Energy @ GT
+        <a href="/" class="brand" aria-label="Power Up GT, home">
+          <span class="brand-mark" aria-hidden="true">7</span> Power Up GT
         </a>
         <nav aria-label="Main">
           <ul>
@@ -53,8 +57,16 @@ const links = [
 
     <footer class="site-footer">
       <div class="wrap">
-        <p><strong>LMC 3403, Unit 2:</strong> Jesus Sierra Jr., Joshua Lewis, Hardik Uppal, Quintin Buckley</p>
-        <p class="small">A student project supporting the GT Energy Solutions VIP.</p>
+        <p>
+          <strong>Power Up GT</strong> is a student campaign connecting Georgia Tech undergraduates to the campus
+          initiatives working on <a href="https://sdgs.un.org/goals/goal7">UN SDG 7: Affordable and Clean Energy</a>, in
+          support of Georgia Tech's <a href="https://sustain.gatech.edu/sustainability-next-plan/">Sustainability Next</a>
+          plan and Climate Action Plan.
+        </p>
+        <p class="small">
+          Created for LMC 3403, Unit 2, by Jesus Sierra Jr., Joshua Lewis, Hardik Uppal, and Quintin Buckley. Not an
+          official Georgia Tech website. Program details change, so confirm with each organization before applying.
+        </p>
       </div>
     </footer>
   </body>
@@ -78,12 +90,26 @@ const links = [
     padding: 0.8rem 0;
   }
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 800;
     text-decoration: none;
     color: var(--navy);
     letter-spacing: -0.01em;
   }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 6px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 1rem;
+  }
   .site-header ul {
+    flex-wrap: wrap;
     display: flex;
     gap: 0.25rem;
     list-style: none;
@@ -114,7 +140,11 @@ const links = [
     font-size: 0.95rem;
   }
   .site-footer p {
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.6rem;
+    max-width: 46rem;
+  }
+  .site-footer a {
+    color: #fff;
   }
   .site-footer .small {
     font-size: 0.85rem;

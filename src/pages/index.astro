@@ -5,57 +5,140 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Home">
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">GT Energy Solutions VIP</span>
-      <h1>Power Georgia Tech<br />with clean energy.</h1>
+      <span class="eyebrow">UN SDG 7 · Affordable and Clean Energy</span>
+      <h1>Georgia Tech runs on power.<br />Help decide where it comes from.</h1>
       <p class="lead">
-        Campus runs on energy every second of the day. Students can help decide where it comes from.
+        For Georgia Tech undergraduates in any major who want real experience on a problem that affects every
+        building you walk into. Campus energy is one of the biggest challenges Tech has committed to solve, and students
+        are part of the solution.
       </p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="/get-involved">Get involved</a>
-        <a class="btn btn-ghost" href="/issue">Why it matters</a>
+        <a class="btn btn-primary" href="/get-involved">Find your way in</a>
+        <a class="btn btn-ghost" href="/why-it-matters">Why it matters</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <h2>Clean energy, in three ideas</h2>
+      <h2>Campus energy, by the numbers</h2>
+      <div class="stats">
+        <div class="stat-tile">
+          <strong>$34.9M</strong>
+          <p>Georgia Tech's energy bill in FY2025, up 15% from the year before.</p>
+        </div>
+        <div class="stat-tile">
+          <strong>&lt;1%</strong>
+          <p>Share of campus energy produced by on-site solar.</p>
+        </div>
+        <div class="stat-tile">
+          <strong>50%</strong>
+          <p>Cut in emissions Georgia Tech has committed to by 2030, on the way to net-zero by 2050.</p>
+        </div>
+      </div>
+      <p class="cite">
+        Sources:
+        <a href="https://sustain.gatech.edu/files/2026/02/Georgia-Tech-2025-Annual-Utility-Report-Final-1.pdf">GT FY2025 Annual Utility Report</a>;
+        <a href="https://sustain.gatech.edu/2024/04/05/climate-action-plan-provides-road-map-to-net-zero-emissions/">GT Climate Action Plan</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Why you should care</h2>
       <div class="grid">
         <div class="card">
           <div class="num">1</div>
-          <h3>It's the issue</h3>
-          <p>Most of the energy we rely on still comes from sources that warm the planet.</p>
+          <h3>It's your campus</h3>
+          <p>
+            Electricity is Georgia Tech's single largest source of emissions. The choices made about labs, dorms, and
+            classrooms over the next few years decide whether Tech meets its 2030 goal.
+          </p>
         </div>
         <div class="card">
           <div class="num">2</div>
-          <h3>It's possible</h3>
-          <p>Solar, efficiency, and smarter grids are already working on campuses like ours.</p>
+          <h3>It's your career</h3>
+          <p>
+            Energy touches every field: engineering, computing, business, policy, and design. Campus projects build the
+            skills employers in this growing field are hiring for.
+          </p>
         </div>
         <div class="card">
           <div class="num">3</div>
-          <h3>It's student-led</h3>
-          <p>The GT Energy Solutions VIP lets students work on real energy projects.</p>
+          <h3>It's already happening</h3>
+          <p>
+            Students have audited campus buildings, raced solar cars, and pitched carbon cuts to employers. Their work
+            is shaping real upgrades. You don't need to be an expert to start.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">See it on campus</span>
+        <h2>A building that makes more energy than it uses</h2>
+        <p>
+          The Kendeda Building for Innovative Sustainable Design, next to the EcoCommons, produced <strong>194%</strong>
+          of its own electricity in FY2025 from its rooftop solar canopy. It shows what campus energy could look like,
+          and anyone can tour it.
+        </p>
+        <p>
+          Watch how the solar canopy closed the gap to net-positive energy, then see the
+          <a href="/get-involved">ways you can help bring that thinking to the rest of campus</a>.
+        </p>
+      </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/W134QA1mFpY"
+          title="Solar: The Last Step For Net-Positive Energy at The Kendeda Building"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        <p class="cite">Video: The Kendeda Building (YouTube).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap">
+      <h2>Start with one step this week.</h2>
+      <p class="lead">
+        Take the two-question quiz on our Get Involved page to match with a club, team, job, or one-hour event that fits
+        your schedule and interests.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/get-involved#quiz">Take the quiz</a>
+        <a class="btn btn-ghost" href="/resources">Browse resources</a>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
+  .hero,
+  .cta {
     background:
       radial-gradient(900px 400px at 85% -10%, rgba(179, 163, 105, 0.35), transparent 60%),
       linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
     color: #fff;
+  }
+  .hero {
     padding: clamp(4rem, 12vw, 8rem) 0;
   }
-  .hero h1 {
+  .hero h1,
+  .cta h2 {
     color: #fff;
   }
   .hero .eyebrow {
     color: var(--gold);
   }
-  .hero .lead {
+  .hero .lead,
+  .cta .lead {
     color: #cfdbe7;
   }
 </style>

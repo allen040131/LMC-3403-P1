@@ -1,0 +1,341 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// EIA, Net Generation by State (1990-2024), Georgia 2024 totals. Shares of 139.8 million MWh.
+const mix = [
+  {
+    id: 'gas',
+    label: 'Natural gas',
+    pct: 40.7,
+    fossil: true,
+    note: 'Georgia’s largest source of electricity. Burning gas releases CO₂, and methane can leak from wells and pipelines before it ever reaches a power plant.',
+  },
+  {
+    id: 'nuclear',
+    label: 'Nuclear',
+    pct: 34.3,
+    fossil: false,
+    note: 'Carbon-free when running. Plant Vogtle’s new Unit 4 came online in 2024, making Vogtle the largest nuclear plant in the U.S., at a cost of over $30 billion.',
+  },
+  {
+    id: 'coal',
+    label: 'Coal',
+    pct: 12.8,
+    fossil: true,
+    note: 'The most carbon-intensive fuel on the grid: coal releases more CO₂ per unit of electricity than any other source.',
+  },
+  {
+    id: 'solar',
+    label: 'Solar',
+    pct: 6.6,
+    fossil: false,
+    note: 'Georgia’s largest renewable source. Campus rooftops like the Kendeda Building show that solar works here, too.',
+  },
+  {
+    id: 'biomass',
+    label: 'Wood & biomass',
+    pct: 3.8,
+    fossil: false,
+    note: 'Mostly wood waste from Georgia’s forestry and paper industries, burned to make power and heat.',
+  },
+  {
+    id: 'hydro',
+    label: 'Hydroelectric',
+    pct: 2.1,
+    fossil: false,
+    note: 'Power from dams on Georgia rivers. A steady but small part of the mix with little room to grow.',
+  },
+];
+const max = Math.max(...mix.map((m) => m.pct));
+---
+
+<Layout title="Why It Matters">
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Why It Matters</span>
+      <h1>Every lab, dorm, and lecture hall plugs into a fossil-fuel grid.</h1>
+      <p class="lead">
+        Energy is the climate problem we use every second of the day. Where Georgia Tech’s power comes from, and how much
+        of it we use, decides whether the Institute can keep its climate promises.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <h2>Where Georgia’s electricity comes from</h2>
+      <p>
+        Most of the electricity Georgia Tech buys comes off the state grid. In 2024, about <strong>54%</strong> of that grid
+        ran on fossil fuels. Select a source to learn more.
+      </p>
+
+      <figure class="mixchart" aria-labelledby="mix-caption">
+        <div class="legend" aria-hidden="true">
+          <span><i class="sw fossil"></i>Fossil fuel</span>
+          <span><i class="sw clean"></i>Non-fossil</span>
+        </div>
+        <div class="bars" role="group" aria-label="Georgia electricity sources, 2024">
+          {
+            mix.map((m, i) => (
+              <button
+                type="button"
+                class="bar-row"
+                data-id={m.id}
+                data-label={m.label}
+                data-pct={m.pct}
+                data-note={m.note}
+                aria-pressed={i === 0 ? 'true' : 'false'}
+              >
+                <span class="bar-label">{m.label}</span>
+                <span class="bar-track">
+                  <span class={`bar ${m.fossil ? 'fossil' : 'clean'}`} style={`width: ${(m.pct / max) * 100}%`} />
+                </span>
+                <span class="bar-value">
+                  {m.pct}%<span class="kind">{m.fossil ? 'fossil' : 'non-fossil'}</span>
+                </span>
+              </button>
+            ))
+          }
+        </div>
+        <div class="detail" aria-live="polite">
+          <strong id="mix-title">{mix[0].label}: {mix[0].pct}%</strong>
+          <p id="mix-note">{mix[0].note}</p>
+        </div>
+        <figcaption id="mix-caption" class="cite">
+          Share of Georgia’s 2024 net electricity generation. Petroleum and other sources are under 1%. Source:
+          <a href="https://www.eia.gov/electricity/data/state/">U.S. EIA, Net Generation by State</a>;
+          <a href="https://www.eia.gov/todayinenergy/detail.php?id=61963">EIA on Plant Vogtle (2024)</a>.
+        </figcaption>
+        <details class="table-view">
+          <summary>View as a table</summary>
+          <table>
+            <thead><tr><th scope="col">Source</th><th scope="col">Share</th><th scope="col">Type</th></tr></thead>
+            <tbody>
+              {mix.map((m) => (<tr><td>{m.label}</td><td>{m.pct}%</td><td>{m.fossil ? 'Fossil' : 'Non-fossil'}</td></tr>))}
+            </tbody>
+          </table>
+        </details>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>What that means for Georgia Tech</h2>
+      <div class="stats">
+        <div class="stat-tile">
+          <strong>216,752</strong>
+          <p>Metric tons of CO₂e emitted by Georgia Tech in FY2025. Purchased electricity is the largest source.</p>
+        </div>
+        <div class="stat-tile">
+          <strong>60 / 40</strong>
+          <p>Campus energy split between electricity and natural gas, which heats buildings and makes steam.</p>
+        </div>
+        <div class="stat-tile">
+          <strong>−25%</strong>
+          <p>Drop in energy used per square foot since FY2015, even as on-campus students grew 34%.</p>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem">
+        That last number is the hopeful one: efficiency works. Chiller-plant upgrades alone save 12.7 million kWh a year.
+        Georgia Tech’s 2025 Utilities Master Plan calls for <strong>2 MW of new campus solar</strong> and electrifying
+        campus heating. Those projects need people who understand energy, data, buildings, and how to persuade others to
+        act.
+      </p>
+      <p class="cite">
+        Sources:
+        <a href="https://sustain.gatech.edu/impact-area-emissions/">GT Office of Sustainability, Emissions</a>;
+        <a href="https://sustain.gatech.edu/files/2026/02/Georgia-Tech-2025-Annual-Utility-Report-Final-1.pdf">FY2025 Annual Utility Report</a>;
+        <a href="https://sustain.gatech.edu/files/2026/02/2025-Sustainability-Report_2.2026_SPREADS.pdf">2025 Sustainability Report</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">The global goal</span>
+        <h2>UN SDG 7: Affordable and Clean Energy</h2>
+        <p>
+          <a href="https://sdgs.un.org/goals/goal7">Sustainable Development Goal 7</a> calls for affordable, reliable,
+          sustainable, and modern energy for all. Two of its targets map directly onto our campus:
+        </p>
+        <ul class="checklist">
+          <li><strong>Target 7.2:</strong> substantially increase the share of renewable energy.</li>
+          <li><strong>Target 7.3:</strong> double the rate of improvement in energy efficiency.</li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">Georgia Tech’s commitment</span>
+        <h2>Sustainability Next and the Climate Action Plan</h2>
+        <p>
+          Georgia Tech’s strategic plan asks the Institute to “lead by example.” Its
+          <a href="https://sustain.gatech.edu/sustainability-next-plan/">Sustainability Next</a> plan delivered the 2024
+          <a href="https://sustain.gatech.edu/2024/04/05/climate-action-plan-provides-road-map-to-net-zero-emissions/">Climate Action Plan</a>,
+          with targets to cut emissions <strong>50% by 2030</strong>, reach <strong>net-zero by 2050</strong>, and move
+          toward 100% clean energy. One of its focus areas is education: preparing every student, in every major, to work
+          on these problems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Why this needs you</h2>
+      <p class="lead">
+        Georgia Tech can’t hit a 2030 deadline with policy alone. Fall 2025 student energy audits of four campus
+        buildings now inform real upgrade plans. Student clubs host energy hackathons and conferences. Students raise
+        money and build prototypes. Your semester could be part of that record.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/get-involved">See how to get involved</a>
+        <a class="btn btn-outline" href="/resources">Everyday actions</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .mixchart {
+    margin: 1.5rem 0 0;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .legend {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .sw {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 3px;
+  }
+  .fossil {
+    background: repeating-linear-gradient(45deg, #c0612b 0 6px, #a9531f 6px 8px);
+  }
+  .clean {
+    background: #2f8f5b;
+  }
+  .bars {
+    display: grid;
+    gap: 2px;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr 5.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    font: inherit;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+  .bar-row:hover,
+  .bar-row[aria-pressed='true'] {
+    background: var(--gold-soft);
+  }
+  .bar-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .bar-track {
+    height: 1.1rem;
+  }
+  .bar {
+    display: block;
+    height: 100%;
+    min-width: 4px;
+    border-radius: 0 4px 4px 0;
+  }
+  .bar-value {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    line-height: 1.2;
+  }
+  .kind {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .detail {
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--gold);
+    background: var(--bg);
+    border-radius: 0 8px 8px 0;
+    min-height: 6rem;
+  }
+  .detail strong {
+    color: var(--navy);
+  }
+  .detail p {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+  }
+  .table-view {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  .table-view summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .table-view table {
+    margin-top: 0.6rem;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 28rem;
+  }
+  .table-view th,
+  .table-view td {
+    text-align: left;
+    padding: 0.35rem 0.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 560px) {
+    .bar-row {
+      grid-template-columns: 6.5rem 1fr 4.5rem;
+      gap: 0.5rem;
+    }
+    .bar-label {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  const rows = document.querySelectorAll<HTMLButtonElement>('.bar-row');
+  const title = document.getElementById('mix-title');
+  const note = document.getElementById('mix-note');
+
+  function show(row: HTMLButtonElement) {
+    rows.forEach((r) => r.setAttribute('aria-pressed', String(r === row)));
+    if (title) title.textContent = `${row.dataset.label}: ${row.dataset.pct}%`;
+    if (note) note.textContent = row.dataset.note ?? '';
+  }
+
+  rows.forEach((row) => {
+    row.addEventListener('click', () => show(row));
+    row.addEventListener('mouseenter', () => show(row));
+  });
+</script>
