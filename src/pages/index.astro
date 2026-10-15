@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">GT Energy Solutions VIP</span>
+      <h1>Power Georgia Tech<br />with clean energy.</h1>
+      <p class="lead">
+        Campus runs on energy every second of the day. Students can help decide where it comes from.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/get-involved">Get involved</a>
+        <a class="btn btn-ghost" href="/issue">Why it matters</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Clean energy, in three ideas</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>It's the issue</h3>
+          <p>Most of the energy we rely on still comes from sources that warm the planet.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>It's possible</h3>
+          <p>Solar, efficiency, and smarter grids are already working on campuses like ours.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>It's student-led</h3>
+          <p>The GT Energy Solutions VIP lets students work on real energy projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background:
+      radial-gradient(900px 400px at 85% -10%, rgba(179, 163, 105, 0.35), transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: clamp(4rem, 12vw, 8rem) 0;
+  }
+  .hero h1 {
+    color: #fff;
+  }
+  .hero .eyebrow {
+    color: var(--gold);
+  }
+  .hero .lead {
+    color: #cfdbe7;
+  }
+</style>

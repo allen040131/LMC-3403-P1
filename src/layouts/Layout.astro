@@ -1,0 +1,123 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Promoting clean energy to Georgia Tech students through the GT Energy Solutions VIP.' } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/issue', label: 'The Issue' },
+  { href: '/get-involved', label: 'Get Involved' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Clean Energy at Georgia Tech</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap bar">
+        <a href="/" class="brand" aria-label="Clean Energy at Georgia Tech, home">
+          Clean Energy @ GT
+        </a>
+        <nav aria-label="Main">
+          <ul>
+            {
+              links.map((l) => (
+                <li>
+                  <a href={l.href} aria-current={path === l.href ? 'page' : undefined}>
+                    {l.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p><strong>LMC 3403, Unit 2:</strong> Jesus Sierra Jr., Joshua Lewis, Hardik Uppal, Quintin Buckley</p>
+        <p class="small">A student project supporting the GT Energy Solutions VIP.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(251, 250, 247, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    padding: 0.8rem 0;
+  }
+  .brand {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .site-header ul {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-header nav a {
+    display: block;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .site-header nav a:hover {
+    color: var(--navy);
+    background: var(--gold-soft);
+  }
+  .site-header nav a[aria-current='page'] {
+    color: #fff;
+    background: var(--navy);
+  }
+  .site-footer {
+    background: var(--navy-deep);
+    color: #c9d6e2;
+    padding: 2rem 0;
+    font-size: 0.95rem;
+  }
+  .site-footer p {
+    margin: 0 0 0.3rem;
+  }
+  .site-footer .small {
+    font-size: 0.85rem;
+    opacity: 0.75;
+  }
+</style>

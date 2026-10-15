@@ -1,0 +1,240 @@
+:root {
+  --navy: #003057;
+  --navy-deep: #00203b;
+  --gold: #b3a369;
+  --gold-soft: #f3efe0;
+  --green: #2f8f5b;
+  --green-soft: #e6f3ec;
+  --ink: #1b2733;
+  --muted: #5b6875;
+  --bg: #fbfaf7;
+  --card: #ffffff;
+  --line: #e4e1d8;
+  --radius: 14px;
+  --max: 1080px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6em;
+  color: var(--navy);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--navy);
+}
+
+.wrap {
+  width: min(var(--max), 100% - 2rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(3rem, 8vw, 5.5rem) 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.8rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+.btn-primary:hover {
+  background: #c4b57b;
+}
+
+.btn-ghost {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.btn-outline {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+}
+
+.card .num {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Placeholder marker so unsourced content is obvious */
+.placeholder {
+  background: #fff3c4;
+  border-bottom: 2px dashed #c9a400;
+  padding: 0 0.25em;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #5a4800;
+}
+
+/* Callout stat */
+.stat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.stat strong {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat p {
+  margin: 0;
+  max-width: 30rem;
+  color: #dbe5ee;
+}
+
+/* Two-column text */
+.split {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.9rem;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft);
+}
+
+.band {
+  background: var(--gold-soft);
+}
+
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
