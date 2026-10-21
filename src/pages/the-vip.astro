@@ -1,0 +1,451 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const NEWS =
+  'https://news.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course';
+const SYLLABUS =
+  'https://syllabus.gatech.edu/sites/default/files/2026-04/VIP-Syllabus-%20Revised-Fall-2026_1.pdf';
+const TEAM = 'https://vip.gatech.edu/teams-all-in-one/entry/1252/';
+const VIP_STUDENTS = 'https://vip.gatech.edu/prospective-students/';
+
+// Fall 2025 course structure, as described by GT News (Feb. 27, 2026).
+const steps = [
+  {
+    title: 'Learn the method',
+    when: 'Early semester',
+    text: 'Classroom sessions on how buildings use energy and how a professional energy audit is run.',
+  },
+  {
+    title: 'Walk the buildings',
+    when: 'Site visits',
+    text: 'Building managers Eric Denison and Ross Bongiovi led the team through four Marietta Street buildings, from HVAC controls to lighting systems.',
+  },
+  {
+    title: 'Assess four systems',
+    when: 'Fieldwork',
+    text: 'Students then assessed heating and cooling (HVAC), lighting, water and plumbing fixtures, and the building envelope: walls, windows, and how air leaks out.',
+  },
+  {
+    title: 'Write the audit',
+    when: 'Late semester',
+    text: 'Each building got a full ASHRAE Level 1 audit, the industry-standard walk-through survey that flags low-cost fixes and bigger upgrades worth studying.',
+  },
+  {
+    title: 'Present to campus',
+    when: 'Finals',
+    text: 'Students presented their findings. Campus planning now uses the reports for upgrades, cost savings, and return-on-investment estimates.',
+  },
+];
+
+const findings = [
+  { area: 'Lighting', recs: ['Replace fluorescent bulbs with LEDs'] },
+  { area: 'Heating & cooling', recs: ['Electrify gas-powered space heaters', 'Improve HVAC zoning'] },
+  { area: 'Water', recs: ['Install motion sensors on sinks'] },
+  {
+    area: 'Building envelope',
+    recs: ['Reduce energy lost to air leakage', 'Plan renovations around standards like LEED'],
+  },
+];
+
+// Fall 2026 syllabus grading breakdown.
+const grading = [
+  { label: 'Final report & presentation', pct: 40, color: 'var(--navy)' },
+  { label: 'Teamwork, attendance & peer reviews', pct: 35, color: 'var(--green)' },
+  { label: 'VIP notebook & team wiki', pct: 25, color: 'var(--gold)' },
+];
+---
+
+<Layout title="The VIP" description="What the GT Energy Solutions VIP does, what a semester looks like, and how to apply.">
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">GT Energy Solutions VIP</span>
+        <h1>Students audit campus. Campus listens.</h1>
+        <p class="lead">
+          Taught by Office of Sustainability staff, this team turns Georgia Tech’s own buildings into a semester-long
+          research project, and its reports go straight to the people who plan campus upgrades.
+        </p>
+      </div>
+      <dl class="facts card">
+        <div><dt>Led by</dt><dd>Jennifer Chirico, Associate VP of Sustainability, and Jairo Garcia, Office of Sustainability</dd></div>
+        <div><dt>Who can join</dt><dd>Sophomores through PhD students, any major</dd></div>
+        <div><dt>Credit</dt><dd>1–3 hours, letter grade. Counts differently by major.</dd></div>
+        <div><dt>Time</dt><dd>One 50-minute team meeting a week, plus about 3 hours of work per credit</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <span class="eyebrow">Fall 2025, step by step</span>
+      <h2>How the team audited four buildings</h2>
+      <p>Select each stage to see what students did.</p>
+      <div class="timeline">
+        <div class="steps" role="tablist" aria-label="Audit stages">
+          {
+            steps.map((s, i) => (
+              <button
+                type="button"
+                role="tab"
+                id={`step-tab-${i}`}
+                aria-controls="step-panel"
+                aria-selected={i === 0 ? 'true' : 'false'}
+                tabindex={i === 0 ? 0 : -1}
+                data-title={s.title}
+                data-when={s.when}
+                data-text={s.text}
+              >
+                <span class="dot">{i + 1}</span>
+                <span class="step-name">{s.title}</span>
+              </button>
+            ))
+          }
+        </div>
+        <div id="step-panel" class="step-panel" role="tabpanel" aria-labelledby="step-tab-0" aria-live="polite">
+          <span class="when">{steps[0].when}</span>
+          <h3>{steps[0].title}</h3>
+          <p>{steps[0].text}</p>
+        </div>
+      </div>
+      <p class="cite">Source: <a href={NEWS}>GT News, “Students Take the Lead in Campus Energy Decisions” (Feb. 2026)</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>What students recommended</h2>
+      <div class="grid">
+        {
+          findings.map((f) => (
+            <div class="card">
+              <h3>{f.area}</h3>
+              <ul class="checklist">
+                {f.recs.map((r) => (
+                  <li>{r}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <p style="margin-top: 1.5rem">
+        The work didn’t stop at the report. In spring 2026, students Shivangi Ranjan and Calina Levy worked with the
+        Office of Sustainability to put these ideas into practice and cut energy and water use in the four buildings.
+        They presented their progress during <a href="https://research.gatech.edu/gt-energy-efficiency-through-student-led-energy-audits">SDG Week</a>
+        at the Kendeda Building.
+      </p>
+      <div class="quotes">
+        <blockquote>
+          “It was interesting to see the different HVAC systems and the temperatures they are constantly maintaining.”
+          <cite>Noah Mitchell, electrical engineering</cite>
+        </blockquote>
+        <blockquote>
+          “Joining the VIP allowed me to see the behind-the-scenes steps of building maintenance, which added a human
+          component.”
+          <cite>Calina Levy, environmental engineering</cite>
+        </blockquote>
+      </div>
+      <p class="cite">Sources: <a href={NEWS}>GT News (Feb. 2026)</a>; <a href="https://research.gatech.edu/gt-energy-efficiency-through-student-led-energy-audits">GT Research, SDG Week event (Mar. 5, 2026)</a>.</p>
+    </div>
+  </section>
+
+  <section class="section next">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">2026–27 focus</span>
+        <h2>Next up: hydrogen, storage, and campus renewables</h2>
+        <p>
+          The team is now looking past efficiency to new energy sources. According to its VIP listing, the team evaluates
+          hydrogen energy systems, renewable generation, energy storage, and efficiency. This year it is focused on
+          alternative energy for the Georgia Tech campus, from production and storage to fueling infrastructure.
+        </p>
+        <p>
+          Questions like these need more than one major: engineers to size the systems, business and policy students to
+          weigh costs and rules, and computing and design students to model and explain the options.
+        </p>
+        <p class="cite">Source: <a href={TEAM}>GT Energy Solutions, VIP team listing</a>.</p>
+      </div>
+      <figure class="grade card" aria-labelledby="grade-cap">
+        <h3>How you’re graded</h3>
+        <div class="stack" role="img" aria-label="Grading: 40% final report and presentation, 35% teamwork, 25% notebook and wiki">
+          {grading.map((g) => <span style={`width:${g.pct}%;background:${g.color}`}>{g.pct}%</span>)}
+        </div>
+        <ul class="key">
+          {
+            grading.map((g) => (
+              <li>
+                <i style={`background:${g.color}`} />
+                <strong>{g.pct}%</strong> {g.label}
+              </li>
+            ))
+          }
+        </ul>
+        <figcaption id="grade-cap" class="cite">
+          From the <a href={SYLLABUS}>Fall 2026 syllabus</a>, which lists the course as “GT Clean Energy Team” with
+          Dr. Jairo Garcia. No exams: your grade comes from real project work.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band" id="apply">
+    <div class="wrap">
+      <h2>How to apply</h2>
+      <ol class="apply">
+        <li>
+          <strong>Check the listing.</strong> Read the <a href={TEAM}>GT Energy Solutions team page</a> for current
+          meeting times and the majors the team is looking for.
+        </li>
+        <li>
+          <strong>Apply online.</strong> Submit a <a href={VIP_STUDENTS}>VIP application</a>. Applications open the
+          semester before and close the Thursday of the first week of classes. Teams fill up, so apply early.
+        </li>
+        <li>
+          <strong>Register once accepted.</strong> Sign up for 1 or 2 credits. Returning members
+          can take on leadership roles, and a 3-credit option opens up in later semesters.
+        </li>
+        <li>
+          <strong>Check your degree.</strong> VIP can count as a free elective, a major elective, or even senior design,
+          depending on your major. See the <a href="https://vip.gatech.edu/policies-students/">VIP policies by major</a>.
+        </li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={VIP_STUDENTS}>Apply on the VIP site</a>
+        <a class="btn btn-outline" href="mailto:Jairo.garcia@design.gatech.edu?subject=Energy%20Solutions%20VIP">Email the instructor</a>
+      </div>
+      <p class="cite">
+        Source: <a href={VIP_STUDENTS}>VIP Program, Prospective Students</a>. Not sure this is for you?
+        <a href="/get-involved">See other campus sustainability projects</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .facts {
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .facts dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .facts dd {
+    margin: 0.15rem 0 0;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .timeline {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 1.55rem;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: var(--line);
+  }
+  .steps button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: center;
+  }
+  .dot {
+    display: grid;
+    place-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    background: var(--card);
+    border: 3px solid var(--line);
+    font-weight: 800;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .step-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .steps button:hover .dot {
+    border-color: var(--gold);
+  }
+  .steps button[aria-selected='true'] {
+    color: var(--navy);
+  }
+  .steps button[aria-selected='true'] .dot {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+  }
+  .step-panel {
+    margin-top: 1.25rem;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--gold);
+    background: var(--bg);
+    border-radius: 0 8px 8px 0;
+    min-height: 7.5rem;
+  }
+  .step-panel h3 {
+    margin: 0.2rem 0 0.4rem;
+  }
+  .step-panel p {
+    margin: 0;
+    color: var(--muted);
+  }
+  .when {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .card .checklist li {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .quotes {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: 1.5rem;
+  }
+  blockquote {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--gold);
+    background: var(--gold-soft);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .grade {
+    margin: 0;
+  }
+  .stack {
+    display: flex;
+    height: 2.4rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem;
+  }
+  .stack span {
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+  .stack span:last-child {
+    color: var(--navy-deep);
+  }
+  .key {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .key li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .key i {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 3px;
+    flex: none;
+  }
+  .apply {
+    padding-left: 1.3rem;
+    max-width: 46rem;
+  }
+  .apply li {
+    margin-bottom: 0.8rem;
+  }
+  @media (max-width: 640px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+    .steps::before {
+      display: none;
+    }
+    .steps button {
+      flex-direction: row;
+      text-align: left;
+      gap: 0.75rem;
+    }
+    .dot {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dot {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.steps [role="tab"]'));
+  const panel = document.getElementById('step-panel');
+
+  function select(tab: HTMLButtonElement, focus = false) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    if (panel) {
+      panel.setAttribute('aria-labelledby', tab.id);
+      panel.querySelector('.when')!.textContent = tab.dataset.when ?? '';
+      panel.querySelector('h3')!.textContent = tab.dataset.title ?? '';
+      panel.querySelector('p')!.textContent = tab.dataset.text ?? '';
+    }
+    if (focus) tab.focus();
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', (e) => {
+      const dir = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (!dir) return;
+      e.preventDefault();
+      select(tabs[(i + dir + tabs.length) % tabs.length], true);
+    });
+  });
+</script>

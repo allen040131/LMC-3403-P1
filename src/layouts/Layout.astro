@@ -8,15 +8,16 @@ interface Props {
 
 const {
   title,
-  description = 'Why Georgia Tech students should care about clean energy (UN SDG 7), and how to get involved in the energy initiatives on campus.',
+  description = 'Join the Georgia Tech Energy Solutions VIP: audit real campus buildings, recommend upgrades, and help Georgia Tech meet UN SDG 7 and its net-zero goals.',
 } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/why-it-matters', label: 'Why It Matters' },
+  { href: '/the-issue', label: 'The Issue' },
+  { href: '/the-vip', label: 'The VIP' },
   { href: '/get-involved', label: 'Get Involved' },
-  { href: '/resources', label: 'Resources' },
+  { href: '/sources', label: 'Sources' },
 ];
 ---
 
@@ -27,13 +28,13 @@ const links = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Power Up GT</title>
+    <title>{title} | GT Energy Solutions VIP</title>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap bar">
-        <a href="/" class="brand" aria-label="Power Up GT, home">
-          <span class="brand-mark" aria-hidden="true">7</span> Power Up GT
+        <a href="/" class="brand" aria-label="GT Energy Solutions VIP, home">
+          <span class="brand-mark" aria-hidden="true">7</span> GT Energy Solutions VIP
         </a>
         <nav aria-label="Main">
           <ul>
@@ -58,14 +59,16 @@ const links = [
     <footer class="site-footer">
       <div class="wrap">
         <p>
-          <strong>Power Up GT</strong> is a student campaign connecting Georgia Tech undergraduates to the campus
-          initiatives working on <a href="https://sdgs.un.org/goals/goal7">UN SDG 7: Affordable and Clean Energy</a>, in
-          support of Georgia Tech's <a href="https://sustain.gatech.edu/sustainability-next-plan/">Sustainability Next</a>
-          plan and Climate Action Plan.
+          The <strong>GT Energy Solutions VIP</strong> is a for-credit research team, taught with the
+          <a href="https://sustain.gatech.edu/our-team/">Office of Sustainability</a>, where students put
+          <a href="https://sdgs.un.org/goals/goal7">UN SDG 7: Affordable and Clean Energy</a> into practice on Georgia
+          Tech's own campus, in support of <a href="https://sustain.gatech.edu/sustainability-next-plan/">Sustainability Next</a>
+          and the Climate Action Plan.
         </p>
         <p class="small">
-          Created for LMC 3403, Unit 2, by Jesus Sierra Jr., Joshua Lewis, Hardik Uppal, and Quintin Buckley. Not an
-          official Georgia Tech website. Program details change, so confirm with each organization before applying.
+          Created for LMC 3403, Unit 2, by Jesus Sierra Jr., Joshua Lewis, Hardik Uppal, and Quintin Buckley as a
+          recruiting site for the VIP. Not an official Georgia Tech website. Program details change, so confirm with the
+          <a href="https://vip.gatech.edu/teams-all-in-one/entry/1252/">VIP team listing</a> before applying.
         </p>
       </div>
     </footer>

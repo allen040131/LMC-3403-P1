@@ -12,7 +12,6 @@ interface Item {
   time: Time;
   interests: Interest[];
   tags: string[];
-  warn?: string;
 }
 
 const items: Item[] = [
@@ -35,13 +34,13 @@ const items: Item[] = [
     tags: ['Mar 1–5, 2027'],
   },
   {
-    name: 'Strategic Energy Institute newsletter',
-    url: 'https://energy.gatech.edu/education/gt-students',
-    desc: 'Georgia Tech’s energy research institute shares jobs, internships, events, and student fellowships.',
-    how: 'Subscribe to the “Connections” newsletter from the student page.',
-    time: 'quick',
-    interests: ['data', 'build', 'policy'],
-    tags: ['5 minutes'],
+    name: 'Students Organizing for Sustainability (SOS)',
+    url: 'https://sos.gtorg.gatech.edu/',
+    desc: 'Georgia Tech’s student sustainability group. Its projects include the Community Garden, the Kendeda rooftop garden, hydroponics, Bird Safe Campus, and urban agriculture.',
+    how: 'Come to a general body meeting or join an active project. Volunteer garden shifts are listed on the SOS site.',
+    time: 'weekly',
+    interests: ['build', 'campus'],
+    tags: ['Any major', 'Hands-on'],
   },
   {
     name: 'Energy Club',
@@ -50,7 +49,7 @@ const items: Item[] = [
     how: 'Join the mailing list on the club’s Connect page and come to a general body meeting. Instagram: @gt_energyclub.',
     time: 'weekly',
     interests: ['build', 'data', 'policy', 'campus'],
-    tags: ['Featured', 'Any major'],
+    tags: ['Any major'],
   },
   {
     name: 'Georgia Tech Solar Racing',
@@ -98,23 +97,13 @@ const items: Item[] = [
     tags: ['Paid', 'Opens early spring'],
   },
   {
-    name: 'Energy-focused VIP teams',
-    url: 'https://vip.gatech.edu/teams/',
-    desc: 'Earn credit on multi-year research teams, such as GROWER (power-outage data), Gaming for Electric Power Grids, and EcoCAR.',
+    name: 'Other sustainability VIP teams',
+    url: 'https://vip.gatech.edu/teams-all-in-one/',
+    desc: 'Earn credit on a different multi-year research team. Filter the VIP list by SDG 7 (clean energy) or SDG 13 (climate action) to see options like GROWER and EcoCAR.',
     how: 'Sophomores and above apply on the VIP website. Teams take students from many majors.',
     time: 'semester',
     interests: ['build', 'data'],
     tags: ['For credit'],
-  },
-  {
-    name: 'Energy Solutions VIP',
-    url: 'https://www.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course',
-    desc: 'Taught by Office of Sustainability staff. In Fall 2025, students completed ASHRAE Level 1 energy audits of four campus buildings, and their findings now inform upgrade planning.',
-    how: 'The team isn’t on the current VIP list, so email sustain@gatech.edu to ask whether it’s being offered.',
-    time: 'semester',
-    interests: ['campus', 'data'],
-    tags: ['For credit'],
-    warn: 'Availability unconfirmed for 2026–27',
   },
   {
     name: 'Carbon Reduction Challenge',
@@ -124,15 +113,6 @@ const items: Item[] = [
     time: 'semester',
     interests: ['policy', 'data'],
     tags: ['Prizes', 'Internship'],
-  },
-  {
-    name: 'Energy Systems Minor',
-    url: 'https://www.gatech.edu/academics/degrees/bachelors/energy-systems-minor',
-    desc: 'A 15-credit multidisciplinary minor covering energy generation, policy, and systems, ending with a capstone.',
-    how: 'Talk to your academic advisor about declaring it.',
-    time: 'semester',
-    interests: ['build', 'data', 'policy'],
-    tags: ['15 credits'],
   },
 ];
 
@@ -147,10 +127,10 @@ const groups: { time: Time; title: string; blurb: string }[] = [
   <section class="section">
     <div class="wrap">
       <span class="eyebrow">Get Involved</span>
-      <h1>There’s a place for every major.</h1>
+      <h1>Find your fit.</h1>
       <p class="lead">
-        You don’t need to be an energy expert. Georgia Tech’s clean-energy work needs coders, designers, writers,
-        organizers, and builders. Answer two questions to find your match, or browse everything below.
+        The Energy Solutions VIP is the deepest way in, but it isn’t the only one. Answer two questions and we’ll tell
+        you whether the VIP fits you, and which other campus sustainability projects do.
       </p>
     </div>
   </section>
@@ -181,23 +161,56 @@ const groups: { time: Time; title: string; blurb: string }[] = [
     </div>
   </section>
 
+  <section class="section" style="padding-bottom: 0">
+    <div class="wrap">
+      <h2>Start here</h2>
+      <article
+        class="card item featured"
+        id="vip"
+        data-time="weekly semester"
+        data-interests="build data campus policy"
+      >
+        <div>
+          <span class="tag">For credit</span><span class="tag">Any major</span><span class="tag">Sophomore+</span>
+        </div>
+        <h3><a href="/the-vip">GT Energy Solutions VIP</a></h3>
+        <p>
+          Audit real campus buildings, recommend upgrades that campus planning uses, and, in 2026–27, evaluate hydrogen,
+          storage, and renewables for Georgia Tech. About four hours a week for 1 credit.
+        </p>
+        <p class="how"><strong>How to join:</strong> Apply on the VIP website by the first Thursday of the semester.</p>
+        <a class="more" href="/the-vip#apply">How to apply →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom: 0">
+    <div class="wrap">
+      <span class="eyebrow">Not interested in this VIP?</span>
+      <h2>Other projects making campus more sustainable</h2>
+      <p class="group-blurb">
+        These student groups, events, and programs are also working on energy, climate, and sustainability at Georgia
+        Tech. Every one of them supports the same Sustainability Next goals.
+      </p>
+    </div>
+  </section>
+
   {
     groups.map((g) => (
       <section class="section group" data-group={g.time} style="padding-bottom: 0">
         <div class="wrap">
-          <h2>{g.title}</h2>
+          <h3 class="group-title">{g.title}</h3>
           <p class="group-blurb">{g.blurb}</p>
           <div class="grid">
             {items
               .filter((it) => it.time === g.time)
               .map((it) => (
                 <article
-                  class:list={['card', 'item', { featured: it.tags.includes('Featured') }]}
+                  class="card item"
                   data-time={it.time}
                   data-interests={it.interests.join(' ')}
                 >
                   <div>
-                    {it.warn && <span class="tag warn">{it.warn}</span>}
                     {it.tags.map((t) => (
                       <span class="tag">{t}</span>
                     ))}
@@ -306,6 +319,11 @@ const groups: { time: Time; title: string; blurb: string }[] = [
   }
   .item.featured {
     border: 2px solid var(--gold);
+    max-width: 40rem;
+  }
+  .group-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
   }
   .item.match {
     border-color: var(--green);
@@ -319,6 +337,7 @@ const groups: { time: Time; title: string; blurb: string }[] = [
   const empty = document.querySelector<HTMLElement>('.empty');
   const items = document.querySelectorAll<HTMLElement>('.item');
   const groups = document.querySelectorAll<HTMLElement>('.group');
+  const vip = document.getElementById('vip');
 
   function update() {
     if (!form) return;
@@ -328,7 +347,7 @@ const groups: { time: Time; title: string; blurb: string }[] = [
     let shown = 0;
 
     items.forEach((el) => {
-      const okTime = !time || el.dataset.time === time;
+      const okTime = !time || (el.dataset.time ?? '').split(' ').includes(String(time));
       const okInterest = !interest || (el.dataset.interests ?? '').split(' ').includes(String(interest));
       const visible = okTime && okInterest;
       el.hidden = !visible;
@@ -342,8 +361,11 @@ const groups: { time: Time; title: string; blurb: string }[] = [
 
     if (empty) empty.hidden = shown > 0;
     if (result) {
-      result.textContent =
-        time || interest ? `${shown} ${shown === 1 ? 'match' : 'matches'} for you, highlighted below.` : '';
+      const others = vip && !vip.hidden ? shown - 1 : shown;
+      const more = `${others} other ${others === 1 ? 'match' : 'matches'} highlighted below.`;
+      if (!time && !interest) result.textContent = '';
+      else if (vip && !vip.hidden) result.textContent = `The Energy Solutions VIP fits you! Plus ${more}`;
+      else result.textContent = `The VIP needs a few hours a week, so it may not fit right now. ${more}`;
     }
   }
 

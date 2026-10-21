@@ -2,62 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 
 const sources = [
+  ['Georgia Tech. “Students Take the Lead in Campus Energy Decisions Through Hands-On VIP Course.” February 27, 2026. (Source of the home-page photo.)', 'https://news.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course'],
+  ['Georgia Tech Research. “GT Energy Efficiency Through Student-Led Energy Audits.” SDG Week event, March 5, 2026.', 'https://research.gatech.edu/gt-energy-efficiency-through-student-led-energy-audits'],
+  ['Vertically Integrated Projects. “GT Energy Solutions” team listing.', 'https://vip.gatech.edu/teams-all-in-one/entry/1252/'],
+  ['Georgia Tech. “VIP Syllabus, GT Clean Energy Team (V27), Fall 2026.”', 'https://syllabus.gatech.edu/sites/default/files/2026-04/VIP-Syllabus-%20Revised-Fall-2026_1.pdf'],
+  ['Vertically Integrated Projects. “Prospective Students.”', 'https://vip.gatech.edu/prospective-students/'],
+  ['Vertically Integrated Projects. “Policies for Students.”', 'https://vip.gatech.edu/policies-students/'],
+  ['Georgia Tech Office of the President. “The Power of Vertically Integrated Projects.”', 'https://president.gatech.edu/blog/power-vertically-integrated-projects-innovation-education-georgia-tech-world'],
+  ['Georgia Tech Research Institute. “Creating a Pipeline of Future Technology Leaders.” YouTube.', 'https://www.youtube.com/watch?v=EmqrYSn5oNs'],
   ['United Nations. “Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all.”', 'https://sdgs.un.org/goals/goal7'],
   ['Georgia Tech Office of Sustainability. “Sustainability Next Plan.”', 'https://sustain.gatech.edu/sustainability-next-plan/'],
+  ['Georgia Tech. “The Sustainability Next Task Force Delivers Vision and Launches Implementation.” October 24, 2022.', 'https://www.gatech.edu/news/2022/10/24/sustainability-next-task-force-delivers-vision-and-launches-implementation'],
   ['Georgia Tech. “Climate Action Plan Provides Road Map to Net-Zero Emissions.” April 5, 2024.', 'https://sustain.gatech.edu/2024/04/05/climate-action-plan-provides-road-map-to-net-zero-emissions/'],
   ['Georgia Tech. “Annual Utility Report, FY2025.” February 2026.', 'https://sustain.gatech.edu/files/2026/02/Georgia-Tech-2025-Annual-Utility-Report-Final-1.pdf'],
   ['Georgia Tech Office of Sustainability. “2025 Sustainability Report.” February 2026.', 'https://sustain.gatech.edu/files/2026/02/2025-Sustainability-Report_2.2026_SPREADS.pdf'],
   ['Georgia Tech Office of Sustainability. “Emissions.”', 'https://sustain.gatech.edu/impact-area-emissions/'],
   ['U.S. Energy Information Administration. “Net Generation by State by Type of Producer by Energy Source, 1990–2024.”', 'https://www.eia.gov/electricity/data/state/'],
   ['U.S. Energy Information Administration. “Plant Vogtle Unit 4 begins commercial operation.” May 1, 2024.', 'https://www.eia.gov/todayinenergy/detail.php?id=61963'],
-  ['Georgia Tech. “Students Take the Lead in Campus Energy Decisions Through Hands-On VIP Course.” February 27, 2026.', 'https://www.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course'],
   ['Georgia Tech. “The Kendeda Building: Living Building Challenge.”', 'https://livingbuilding.gatech.edu/living-building-challenge'],
-  ['Georgia Tech Strategic Plan. “Lead by Example.”', 'https://strategicplan.gatech.edu/focus/lead'],
   ['The Kendeda Building. “Solar: The Last Step For Net-Positive Energy at The Kendeda Building.” YouTube.', 'https://www.youtube.com/watch?v=W134QA1mFpY'],
+  ['Students Organizing for Sustainability. Home page.', 'https://sos.gtorg.gatech.edu/'],
+  ['Georgia Tech Campus Services. “Sustainability in Campus Services.”', 'https://sustainability.campusservices.gatech.edu/'],
 ];
 ---
 
-<Layout title="Resources">
+<Layout title="Sources">
   <section class="section">
     <div class="wrap">
-      <span class="eyebrow">Resources</span>
-      <h1>Small actions, campus tools, and where to learn more.</h1>
+      <span class="eyebrow">Sources &amp; Resources</span>
+      <h1>Where our facts come from, and where to learn more.</h1>
       <p class="lead">
-        Not ready to join something yet? These everyday habits and campus services still cut energy use, and they keep
-        you connected to what’s next.
+        Every number on this site links back to Georgia Tech, United Nations, or U.S. government sources.
       </p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: 0">
-    <div class="wrap">
-      <h2>Everyday energy actions</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>In your room</h3>
-          <ul class="checklist">
-            <li>Plug chargers and monitors into a power strip and switch it off when you leave.</li>
-            <li>Keep windows shut while heat or AC is running.</li>
-            <li>Use your laptop’s sleep and battery-saver settings.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>In labs and classrooms</h3>
-          <ul class="checklist">
-            <li>Turn off lights and equipment when you’re the last one out.</li>
-            <li>Ask your lab about the Office of Sustainability’s <a href="https://sustain.gatech.edu/">Sustainable Lab Certification</a>.</li>
-            <li>Report rooms that are always too hot or too cold. Wasted HVAC is wasted energy.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Getting around</h3>
-          <ul class="checklist">
-            <li>Ride the free <a href="https://pts.gatech.edu/stinger-bus-routes">Stinger buses</a>. Live tracking is at bus.gatech.edu.</li>
-            <li>Register your bike and use the secure bike rooms. See <a href="https://www.pts.gatech.edu/commute/commute-options/bicycling-pmds/">PTS Bicycling</a>.</li>
-            <li>Use <a href="https://www.pts.gatech.edu/commute/sustainable-initiatives/">MARTA discounts, carpool permits, and 40+ EV chargers</a>.</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -66,6 +42,7 @@ const sources = [
       <div>
         <h2>Stay in the loop</h2>
         <ul class="checklist">
+          <li><a href="/the-vip">GT Energy Solutions VIP</a>: instructor Jairo Garcia, <a href="mailto:Jairo.garcia@design.gatech.edu">Jairo.garcia@design.gatech.edu</a></li>
           <li><a href="https://sustain.gatech.edu/">Office of Sustainability</a>. Instagram: @SustainAtGatech. Email: <a href="mailto:sustain@gatech.edu">sustain@gatech.edu</a></li>
           <li><a href="https://energyclub.gatech.edu/">Energy Club</a>: mailing list, events, and Instagram @gt_energyclub</li>
           <li><a href="https://energy.gatech.edu/education/gt-students">Strategic Energy Institute</a>: “Connections” jobs and events newsletter</li>
@@ -101,10 +78,6 @@ const sources = [
 </Layout>
 
 <style>
-  .card .checklist li {
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
   .sources {
     padding-left: 1.2rem;
     font-size: 0.9rem;
