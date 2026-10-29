@@ -55,13 +55,63 @@ const max = Math.max(...mix.map((m) => m.pct));
       <span class="eyebrow">The Issue</span>
       <h1>Every lab, dorm, and lecture hall plugs into a fossil-fuel grid.</h1>
       <p class="lead">
-        Energy is the climate problem we use every second of the day. Georgia Tech can’t choose its grid, but it can choose
-        how much energy its buildings use. That choice decides whether the Institute keeps its climate promises.
+        Charging your laptop in the library, running the AC through an Atlanta August, keeping a lab freezer cold: you use
+        energy every second of the day, and most of it comes from fossil fuels. Georgia Tech can’t choose its grid, but it
+        can choose how much energy its buildings use. So can you.
       </p>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0">
+  <section class="section band">
+    <div class="wrap">
+      <h2>Why this is your problem, too</h2>
+      <p>Energy isn’t just a campus statistic. It shows up in your wallet, your city, your job search, and your graduation year.</p>
+      <div class="grid personal">
+        <div class="card">
+          <span class="tag">Your first apartment</span>
+          <strong class="big">+$43/mo</strong>
+          <p>
+            Six Georgia Power rate increases since 2023 have added an average of $43 a month to a household bill. That’s the
+            bill you’ll pay when you move off campus, and wasted energy makes it bigger.
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">Your city</span>
+          <strong class="big">1 in 7</strong>
+          <p>
+            About 14% of metro Atlanta households spend more than a tenth of their income on energy bills. The
+            neighborhoods around campus feel this most. The long-term fix is the same skill the VIP teaches: making buildings
+            efficient.
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">Your career</span>
+          <strong class="big">85,535</strong>
+          <p>
+            Clean energy jobs in Georgia in 2024, nearly 16,000 of them in Fulton County alone. The sector added jobs more
+            than five times faster than the state’s economy overall.
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">Your class year</span>
+          <strong class="big">2030</strong>
+          <p>
+            The year Georgia Tech promised to cut its emissions in half, and the year this fall’s first-year students
+            graduate. Whether campus hits that target will be decided while you’re here.
+          </p>
+        </div>
+      </div>
+      <p class="cite">
+        Sources:
+        <a href="https://www.ajc.com/business/2026/02/georgia-power-floats-plan-to-lower-customers-monthly-bills">Atlanta Journal-Constitution (Feb. 2026)</a>;
+        <a href="https://www.aceee.org/sites/default/files/pdfs/aceee-01_energy_burden_-_atlanta.pdf">ACEEE, Energy Burdens in Atlanta (2020)</a>;
+        <a href="https://e2.org/reports/clean-jobs-georgia-2025">E2, Clean Jobs Georgia 2025</a>;
+        <a href="https://sustain.gatech.edu/2024/04/05/climate-action-plan-provides-road-map-to-net-zero-emissions/">GT Climate Action Plan</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
       <h2>Where Georgia’s electricity comes from</h2>
       <p>
@@ -216,10 +266,10 @@ const max = Math.max(...mix.map((m) => m.pct));
 
   <section class="section cta-plain">
     <div class="wrap">
-      <h2>Students are already closing the gap</h2>
+      <h2>You don’t have to wait until graduation</h2>
       <p class="lead">
-        In Fall 2025, VIP students audited four campus buildings, and campus planning is now using their findings. The
-        team is recruiting for next semester.
+        In Fall 2025, VIP students audited four campus buildings, and campus planning is now using their findings. You can
+        do that work, for credit, starting next semester.
       </p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/the-vip">Meet the VIP</a>
@@ -230,6 +280,17 @@ const max = Math.max(...mix.map((m) => m.pct));
 </Layout>
 
 <style>
+  .personal {
+    margin-top: 1.5rem;
+  }
+  .personal .big {
+    display: block;
+    font-size: clamp(2rem, 4.5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--navy);
+    margin: 0.5rem 0 0.6rem;
+  }
   .mixchart {
     margin: 1.5rem 0 0;
     background: var(--card);

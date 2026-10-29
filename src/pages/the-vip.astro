@@ -75,6 +75,65 @@ const grading = [
     </div>
   </section>
 
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <span class="eyebrow">Inside the community</span>
+      <h2>What VIP looks like</h2>
+      <p>
+        VIP isn’t a lecture. It’s a team of sophomores, seniors, and grad students who meet every week, build things, and
+        show their work to people who use it.
+      </p>
+      <div class="gallery">
+        <figure class="feature">
+          <img
+            src="/images/vip-students.jpg"
+            width="960"
+            height="620"
+            loading="lazy"
+            alt="About twenty Energy Solutions VIP students stand with their instructors inside a campus building, holding notebooks."
+          />
+          <figcaption>
+            <strong>The Energy Solutions team, Fall 2025.</strong> Students and instructors during the semester they
+            audited four campus buildings. Photo: <a href={NEWS}>Georgia Tech News</a>.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/vip-team-meeting.jpg"
+            width="1024"
+            height="605"
+            loading="lazy"
+            alt="Students and a faculty advisor sit around a conference table with laptops and notebooks during a VIP team meeting."
+          />
+          <figcaption><strong>Weekly team meetings.</strong> Every VIP team meets once a week to plan, split up tasks, and check progress.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/vip-build.jpg"
+            width="720"
+            height="473"
+            loading="lazy"
+            alt="A student in a hard hat and work gloves drills into a wooden beam while building an outdoor classroom."
+          />
+          <figcaption><strong>Hands-on fieldwork.</strong> A Building for Equity and Sustainability VIP student builds an outdoor classroom (2025).</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/vip-poster-fair.jpg"
+            width="1024"
+            height="684"
+            loading="lazy"
+            alt="A student shows her team’s project on her phone to a visitor in front of a poster at a VIP poster fair."
+          />
+          <figcaption><strong>Showing your work.</strong> A Bits of Good VIP student presents her team’s app at a poster fair (2022).</figcaption>
+        </figure>
+      </div>
+      <p class="cite">
+        The last three photos show other VIP teams and are courtesy of the <a href="https://vip.gatech.edu/">Georgia Tech VIP Program</a>.
+      </p>
+    </div>
+  </section>
+
   <section class="section band">
     <div class="wrap">
       <span class="eyebrow">Fall 2025, step by step</span>
@@ -222,6 +281,44 @@ const grading = [
 </Layout>
 
 <style>
+  .gallery {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1.5rem;
+  }
+  .gallery figure {
+    margin: 0;
+  }
+  .gallery .feature {
+    grid-column: 1 / -1;
+  }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .gallery .feature img {
+    aspect-ratio: 2 / 1;
+    object-position: 50% 55%;
+  }
+  .gallery figcaption {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    line-height: 1.45;
+  }
+  .gallery figcaption strong {
+    color: var(--navy);
+  }
+  @media (max-width: 760px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
   .facts {
     margin: 0;
     display: grid;
