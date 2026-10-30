@@ -101,6 +101,20 @@ const max = Math.max(...mix.map((m) => m.pct));
           </p>
         </div>
       </div>
+      <figure class="wide-photo">
+        <img
+          src="/images/campus-atlanta-skyline.jpg"
+          width="1920"
+          height="654"
+          loading="lazy"
+          alt="Midtown Atlanta’s skyline rises above the trees and brick buildings of the Georgia Tech campus."
+        />
+        <figcaption>
+          Midtown Atlanta from the Clough Commons roof garden. Every building you can see runs on that same grid. Photo:
+          <a href="https://commons.wikimedia.org/wiki/File:Panorama_of_the_midtown_Atlanta_skyline_from_the_rooftop_garden_of_the_Clough_Undergraduate_Learning_Commons_at_Georgia_Tech,_October_2015.jpg">Marc Merlin</a>,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
+        </figcaption>
+      </figure>
       <p class="cite">
         Sources:
         <a href="https://www.ajc.com/business/2026/02/georgia-power-floats-plan-to-lower-customers-monthly-bills">Atlanta Journal-Constitution (Feb. 2026)</a>;
@@ -192,6 +206,21 @@ const max = Math.max(...mix.map((m) => m.pct));
         campus heating. Those projects need people who understand energy, data, buildings, and how to persuade others to
         act.
       </p>
+      <figure class="wide-photo">
+        <img
+          src="/images/campus-rooftop-solar.jpg"
+          width="1920"
+          height="1298"
+          loading="lazy"
+          alt="Rows of blue solar panels cover the curved roof of the Georgia Tech Aquatic Center with the Atlanta skyline in the distance."
+        />
+        <figcaption>
+          Solar panels on the roof of the Georgia Tech Aquatic Center, one of the places campus already makes its own
+          clean power. Photo:
+          <a href="https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg">Georgia Tech Research Institute</a>,
+          <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.
+        </figcaption>
+      </figure>
       <p class="cite">
         Sources:
         <a href="https://sustain.gatech.edu/impact-area-emissions/">GT Office of Sustainability, Emissions</a>;
@@ -261,6 +290,20 @@ const max = Math.max(...mix.map((m) => m.pct));
           <a href="https://sustain.gatech.edu/files/2026/02/Georgia-Tech-2025-Annual-Utility-Report-Final-1.pdf">FY2025 Annual Utility Report</a>.
         </p>
       </div>
+      <figure class="wide-photo">
+        <img
+          src="/images/campus-solar-canopy.jpg"
+          width="1920"
+          height="1080"
+          loading="lazy"
+          alt="Aerial view of the Kendeda Building at Georgia Tech, its roof and walkways covered by a canopy of solar panels."
+        />
+        <figcaption>
+          The Kendeda Building’s solar canopy: about 917 panels producing 330 kW. Photo:
+          <a href="https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg">KBISD</a>,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -280,6 +323,22 @@ const max = Math.max(...mix.map((m) => m.pct));
 </Layout>
 
 <style>
+  .wide-photo {
+    margin: 2rem 0 0;
+  }
+  .wide-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .wide-photo figcaption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+  }
   .personal {
     margin-top: 1.5rem;
   }

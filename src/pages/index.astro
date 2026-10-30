@@ -59,6 +59,47 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <span class="eyebrow">Already on campus</span>
+      <h2>Clean energy is part of the Georgia Tech skyline</h2>
+      <p>
+        From the Aquatic Center roof to the Kendeda Building, campus already generates its own solar power. The work now
+        is to use less energy and add more clean generation.
+      </p>
+      <div class="duo">
+        <figure>
+          <img
+            src="/images/campus-solar-canopy.jpg"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            alt="Aerial view of the Kendeda Building at Georgia Tech, its roof and walkways covered by a canopy of solar panels."
+          />
+          <figcaption>
+            The Kendeda Building’s solar canopy. Photo:
+            <a href="https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg">KBISD</a>,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/campus-rooftop-solar.jpg"
+            width="1920"
+            height="1298"
+            loading="lazy"
+            alt="Rows of blue solar panels cover the curved roof of the Georgia Tech Aquatic Center with the Atlanta skyline in the distance."
+          />
+          <figcaption>
+            Rooftop solar on the Aquatic Center. Photo:
+            <a href="https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg">Georgia Tech Research Institute</a>,
+            <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="section band">
     <div class="wrap">
       <h2>What you’ll actually do</h2>
@@ -179,6 +220,27 @@ import Layout from '../layouts/Layout.astro';
   }
   .photo figcaption a {
     color: #fff;
+  }
+  .duo {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 1.5rem;
+  }
+  .duo figure {
+    margin: 0;
+  }
+  .duo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .duo figcaption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
   }
   blockquote {
     margin: 1.5rem 0 0;
