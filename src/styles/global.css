@@ -266,6 +266,84 @@ a {
   color: #dbe5ee;
 }
 
+/* Full-bleed photo sections: a decorative <img class="bg"> behind a navy overlay */
+.photo-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  background: var(--navy-deep);
+  color: #fff;
+}
+
+.photo-hero > .bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 32, 59, 0.94) 0%,
+    rgba(0, 32, 59, 0.82) 38%,
+    rgba(0, 32, 59, 0.35) 75%,
+    rgba(0, 32, 59, 0.15) 100%
+  );
+}
+
+.photo-hero .copy {
+  max-width: 36rem;
+}
+
+.photo-hero h1,
+.photo-hero h2 {
+  color: #fff;
+}
+
+.photo-hero .eyebrow {
+  color: var(--gold);
+}
+
+.photo-hero p,
+.photo-hero .lead {
+  color: #dbe5ee;
+}
+
+.photo-hero a:not(.btn) {
+  color: #fff;
+}
+
+.photo-credit {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.6rem;
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.photo-credit a {
+  color: inherit !important;
+}
+
+@media (max-width: 760px) {
+  .photo-hero::before {
+    background: linear-gradient(180deg, rgba(0, 32, 59, 0.66) 0%, rgba(0, 32, 59, 0.82) 100%);
+  }
+  .photo-credit {
+    left: 1rem;
+  }
+}
+
 /* Source line under evidence */
 .cite {
   font-size: 0.85rem;

@@ -25,23 +25,41 @@ const sources = [
   ['American Council for an Energy-Efficient Economy. “Energy Burdens in Atlanta.” September 2020.', 'https://www.aceee.org/sites/default/files/pdfs/aceee-01_energy_burden_-_atlanta.pdf'],
   ['E2 (Environmental Entrepreneurs). “Clean Jobs Georgia 2025.”', 'https://e2.org/reports/clean-jobs-georgia-2025'],
   ['Vertically Integrated Projects. Home page. (Source of the team-meeting, outdoor-classroom, and poster-fair photos on The VIP page.)', 'https://vip.gatech.edu/'],
-  ['KBISD. “Kendeda Building Solar Canopy.” Wikimedia Commons, CC BY-SA 4.0. (Solar canopy photo on the Home and Issue pages.)', 'https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg'],
-  ['Georgia Tech Research Institute. “Georgia Tech Aquatic Center Solar Panels.” Wikimedia Commons, CC BY 3.0. (Rooftop solar photo on the Home and Issue pages.)', 'https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg'],
-  ['Marc Merlin. “Panorama of the midtown Atlanta skyline from the rooftop garden of the Clough Undergraduate Learning Commons at Georgia Tech, October 2015.” Wikimedia Commons, CC BY-SA 4.0. (Skyline photo on the Issue page.)', 'https://commons.wikimedia.org/wiki/File:Panorama_of_the_midtown_Atlanta_skyline_from_the_rooftop_garden_of_the_Clough_Undergraduate_Learning_Commons_at_Georgia_Tech,_October_2015.jpg'],
+  ['Daderot. “G. Wayne Clough Undergraduate Learning Commons, Georgia Institute of Technology.” Wikimedia Commons, CC0. (Sources page header photo.)', 'https://commons.wikimedia.org/wiki/File:G._Wayne_Clough_Undergraduate_Learning_Commons_-_Georgia_Institute_of_Technology_-_DSC00776.JPG'],
+  ['KBISD. “Kendeda Building Exterior.” Wikimedia Commons, CC BY-SA 4.0. (Get Involved page header photo.)', 'https://commons.wikimedia.org/wiki/File:Kendeda_Building_Exterior.jpg'],
+  ['KBISD. “Kendeda Building Solar Canopy.” Wikimedia Commons, CC BY-SA 4.0. (Aerial solar canopy photo on the Issue page.)', 'https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg'],
+  ['Georgia Tech Research Institute. “Georgia Tech Aquatic Center Solar Panels.” Wikimedia Commons, CC BY 3.0. (Rooftop solar photo on the Home page.)', 'https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg'],
+  ['Marc Merlin. “Panorama of the midtown Atlanta skyline from the rooftop garden of the Clough Undergraduate Learning Commons at Georgia Tech, October 2015.” Wikimedia Commons, CC BY-SA 4.0. (Issue page header photo.)', 'https://commons.wikimedia.org/wiki/File:Panorama_of_the_midtown_Atlanta_skyline_from_the_rooftop_garden_of_the_Clough_Undergraduate_Learning_Commons_at_Georgia_Tech,_October_2015.jpg'],
   ['Students Organizing for Sustainability. Home page.', 'https://sos.gtorg.gatech.edu/'],
   ['Georgia Tech Campus Services. “Sustainability in Campus Services.”', 'https://sustainability.campusservices.gatech.edu/'],
 ];
 ---
 
 <Layout title="Sources">
-  <section class="section">
+  <section class="photo-hero sources-hero">
+    <img
+      class="bg"
+      src="/images/campus-clough-commons.jpg"
+      width="1920"
+      height="1280"
+      alt=""
+      fetchpriority="high"
+    />
     <div class="wrap">
-      <span class="eyebrow">Sources &amp; Resources</span>
-      <h1>Where our facts come from, and where to learn more.</h1>
-      <p class="lead">
-        Every number on this site links back to Georgia Tech, United Nations, U.S. government, or other published sources.
-      </p>
+      <div class="copy">
+        <span class="eyebrow">Sources &amp; Resources</span>
+        <h1>Where our facts come from, and where to learn more.</h1>
+        <p class="lead">
+          Every number on this site links back to Georgia Tech, United Nations, U.S. government, or other published
+          sources.
+        </p>
+      </div>
     </div>
+    <p class="photo-credit">
+      Clough Undergraduate Learning Commons. Photo:
+      <a href="https://commons.wikimedia.org/wiki/File:G._Wayne_Clough_Undergraduate_Learning_Commons_-_Georgia_Institute_of_Technology_-_DSC00776.JPG">Daderot</a>,
+      <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+    </p>
   </section>
 
   <section class="section band">
@@ -85,6 +103,16 @@ const sources = [
 </Layout>
 
 <style>
+  .sources-hero {
+    min-height: clamp(420px, 60vh, 560px);
+    padding: clamp(4rem, 10vw, 6rem) 0;
+  }
+  .sources-hero .copy {
+    max-width: 40rem;
+  }
+  .sources-hero .bg {
+    object-position: 70% 35%;
+  }
   .sources {
     padding-left: 1.2rem;
     font-size: 0.9rem;

@@ -3,9 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
+  <section class="photo-hero hero">
+    <img
+      class="bg"
+      src="/images/campus-tech-tower-sunset.jpg"
+      width="1536"
+      height="1024"
+      alt=""
+      fetchpriority="high"
+    />
+    <div class="wrap">
+      <div class="copy">
         <span class="eyebrow">Vertically Integrated Project · UN SDG 7</span>
         <h1>Your campus is the lab.</h1>
         <p class="lead">
@@ -18,19 +26,8 @@ import Layout from '../layouts/Layout.astro';
           <a class="btn btn-ghost" href="/get-involved">Find your fit</a>
         </div>
       </div>
-      <figure class="photo">
-        <img
-          src="/images/vip-students.jpg"
-          width="960"
-          height="620"
-          alt="About twenty Energy Solutions VIP students stand with their instructors inside a campus building, holding notebooks."
-        />
-        <figcaption>
-          Students in the Fall 2025 Energy Solutions VIP course with their instructors. Photo:
-          <a href="https://news.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course">Georgia Tech News</a>.
-        </figcaption>
-      </figure>
     </div>
+    <p class="photo-credit">Tech Tower at sunset. AI-generated image.</p>
   </section>
 
   <section class="section">
@@ -59,68 +56,77 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0">
-    <div class="wrap">
-      <span class="eyebrow">Already on campus</span>
-      <h2>Clean energy is part of the Georgia Tech skyline</h2>
-      <p>
-        From the Aquatic Center roof to the Kendeda Building, campus already generates its own solar power. The work now
-        is to use less energy and add more clean generation.
-      </p>
-      <div class="duo">
-        <figure>
-          <img
-            src="/images/campus-solar-canopy.jpg"
-            width="1920"
-            height="1080"
-            loading="lazy"
-            alt="Aerial view of the Kendeda Building at Georgia Tech, its roof and walkways covered by a canopy of solar panels."
-          />
-          <figcaption>
-            The Kendeda Building’s solar canopy. Photo:
-            <a href="https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg">KBISD</a>,
-            <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="/images/campus-rooftop-solar.jpg"
-            width="1920"
-            height="1298"
-            loading="lazy"
-            alt="Rows of blue solar panels cover the curved roof of the Georgia Tech Aquatic Center with the Atlanta skyline in the distance."
-          />
-          <figcaption>
-            Rooftop solar on the Aquatic Center. Photo:
-            <a href="https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg">Georgia Tech Research Institute</a>,
-            <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.
-          </figcaption>
-        </figure>
+  <section class="section band">
+    <div class="wrap do-grid">
+      <figure class="team-photo">
+        <img
+          src="/images/vip-students.jpg"
+          width="960"
+          height="620"
+          loading="lazy"
+          alt="About twenty Energy Solutions VIP students stand with their instructors inside a campus building, holding notebooks."
+        />
+        <figcaption>
+          The Fall 2025 Energy Solutions VIP team with their instructors. Photo:
+          <a href="https://news.gatech.edu/news/2026/02/27/students-take-lead-campus-energy-decisions-through-hands-vip-course">Georgia Tech News</a>.
+        </figcaption>
+      </figure>
+      <div>
+        <h2>What you’ll actually do</h2>
+        <ol class="steps">
+          <li>
+            <div class="num">1</div>
+            <div>
+              <h3>Audit real buildings</h3>
+              <p>Walk mechanical rooms with building managers and measure how HVAC, lighting, water, and the building envelope perform.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">2</div>
+            <div>
+              <h3>Recommend real upgrades</h3>
+              <p>Your audit report goes to campus planning. They use it for future upgrades, cost savings, and return-on-investment estimates.</p>
+            </div>
+          </li>
+          <li>
+            <div class="num">3</div>
+            <div>
+              <h3>Explore what’s next</h3>
+              <p>In 2026–27, the team is evaluating hydrogen, energy storage, and renewable generation for the Georgia Tech campus.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <section class="section band">
+  <section class="photo-hero solar-band">
+    <img
+      class="bg"
+      src="/images/campus-rooftop-solar.jpg"
+      width="1920"
+      height="1298"
+      loading="lazy"
+      alt=""
+    />
     <div class="wrap">
-      <h2>What you’ll actually do</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="num">1</div>
-          <h3>Audit real buildings</h3>
-          <p>Walk mechanical rooms with building managers and measure how HVAC, lighting, water, and the building envelope perform.</p>
-        </div>
-        <div class="card">
-          <div class="num">2</div>
-          <h3>Recommend real upgrades</h3>
-          <p>Your audit report goes to campus planning. They use it for future upgrades, cost savings, and return-on-investment estimates.</p>
-        </div>
-        <div class="card">
-          <div class="num">3</div>
-          <h3>Explore what’s next</h3>
-          <p>In 2026–27, the team is evaluating hydrogen, energy storage, and renewable generation for the Georgia Tech campus.</p>
+      <div class="copy">
+        <span class="eyebrow">Already on campus</span>
+        <h2>Georgia Tech already makes its own clean power</h2>
+        <p>
+          Solar panels cover the Aquatic Center roof and the Kendeda Building, which produced 194% of its own electricity
+          in FY2025. Most campus buildings were never designed that way. Finding where they waste energy is the VIP’s job.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/the-issue">Why it matters</a>
         </div>
       </div>
     </div>
+    <p class="photo-credit">
+      Solar panels on the Georgia Tech Aquatic Center. Photo:
+      <a href="https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg">Georgia Tech Research Institute</a>,
+      <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>
+    </p>
   </section>
 
   <section class="section">
@@ -176,7 +182,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .hero,
   .cta {
     background:
       radial-gradient(900px 400px at 85% -10%, rgba(179, 163, 105, 0.35), transparent 60%),
@@ -184,63 +189,75 @@ import Layout from '../layouts/Layout.astro';
     color: #fff;
   }
   .hero {
-    padding: clamp(3.5rem, 9vw, 6rem) 0;
+    min-height: clamp(540px, 82vh, 760px);
+    padding: clamp(4rem, 10vw, 7rem) 0;
   }
-  .hero-grid {
-    display: grid;
-    gap: 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
+  .hero .bg {
+    object-position: 70% 40%;
   }
-  .hero h1,
   .cta h2 {
     color: #fff;
   }
-  .hero .eyebrow {
-    color: var(--gold);
-  }
-  .hero .lead,
   .cta .lead {
     color: #cfdbe7;
   }
-  .photo {
+  .do-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+  }
+  .team-photo {
     margin: 0;
   }
-  .photo img {
+  .team-photo img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: var(--radius);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 18px 40px rgba(0, 32, 59, 0.18);
   }
-  .photo figcaption {
-    font-size: 0.82rem;
-    color: #b9c8d6;
-    margin-top: 0.6rem;
-  }
-  .photo figcaption a {
-    color: #fff;
-  }
-  .duo {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin-top: 1.5rem;
-  }
-  .duo figure {
-    margin: 0;
-  }
-  .duo img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    border-radius: var(--radius);
-  }
-  .duo figcaption {
+  .team-photo figcaption {
     font-size: 0.82rem;
     color: var(--muted);
     margin-top: 0.6rem;
+  }
+  .steps {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .steps li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .steps .num {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 800;
+  }
+  .steps h3 {
+    margin-bottom: 0.25rem;
+  }
+  .steps p {
+    margin: 0;
+    color: var(--muted);
+  }
+  .solar-band {
+    min-height: clamp(420px, 60vh, 560px);
+    padding: clamp(4rem, 9vw, 6rem) 0;
+  }
+  .solar-band .bg {
+    object-position: center 40%;
   }
   blockquote {
     margin: 1.5rem 0 0;

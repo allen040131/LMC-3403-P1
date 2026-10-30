@@ -50,16 +50,31 @@ const max = Math.max(...mix.map((m) => m.pct));
 ---
 
 <Layout title="The Issue">
-  <section class="section">
+  <section class="photo-hero issue-hero">
+    <img
+      class="bg"
+      src="/images/campus-atlanta-skyline.jpg"
+      width="1920"
+      height="654"
+      alt=""
+      fetchpriority="high"
+    />
     <div class="wrap">
-      <span class="eyebrow">The Issue</span>
-      <h1>Every lab, dorm, and lecture hall plugs into a fossil-fuel grid.</h1>
-      <p class="lead">
-        Charging your laptop in the library, running the AC through an Atlanta August, keeping a lab freezer cold: you use
-        energy every second of the day, and most of it comes from fossil fuels. Georgia Tech can’t choose its grid, but it
-        can choose how much energy its buildings use. So can you.
-      </p>
+      <div class="copy">
+        <span class="eyebrow">The Issue</span>
+        <h1>Every lab, dorm, and lecture hall plugs into a fossil-fuel grid.</h1>
+        <p class="lead">
+          Charging your laptop in the library, running the AC through an Atlanta August, keeping a lab freezer cold: you
+          use energy every second of the day, and most of it comes from fossil fuels. Georgia Tech can’t choose its grid,
+          but it can choose how much energy its buildings use. So can you.
+        </p>
+      </div>
     </div>
+    <p class="photo-credit">
+      Midtown Atlanta from Georgia Tech’s Clough Commons. Photo:
+      <a href="https://commons.wikimedia.org/wiki/File:Panorama_of_the_midtown_Atlanta_skyline_from_the_rooftop_garden_of_the_Clough_Undergraduate_Learning_Commons_at_Georgia_Tech,_October_2015.jpg">Marc Merlin</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+    </p>
   </section>
 
   <section class="section band">
@@ -101,20 +116,6 @@ const max = Math.max(...mix.map((m) => m.pct));
           </p>
         </div>
       </div>
-      <figure class="wide-photo">
-        <img
-          src="/images/campus-atlanta-skyline.jpg"
-          width="1920"
-          height="654"
-          loading="lazy"
-          alt="Midtown Atlanta’s skyline rises above the trees and brick buildings of the Georgia Tech campus."
-        />
-        <figcaption>
-          Midtown Atlanta from the Clough Commons roof garden. Every building you can see runs on that same grid. Photo:
-          <a href="https://commons.wikimedia.org/wiki/File:Panorama_of_the_midtown_Atlanta_skyline_from_the_rooftop_garden_of_the_Clough_Undergraduate_Learning_Commons_at_Georgia_Tech,_October_2015.jpg">Marc Merlin</a>,
-          <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
-        </figcaption>
-      </figure>
       <p class="cite">
         Sources:
         <a href="https://www.ajc.com/business/2026/02/georgia-power-floats-plan-to-lower-customers-monthly-bills">Atlanta Journal-Constitution (Feb. 2026)</a>;
@@ -200,27 +201,33 @@ const max = Math.max(...mix.map((m) => m.pct));
           <p>Drop in energy used per square foot since FY2015, even as on-campus students grew 34%.</p>
         </div>
       </div>
-      <p style="margin-top: 1.5rem">
-        That last number is the hopeful one: efficiency works. Chiller-plant upgrades alone save 12.7 million kWh a year.
-        Georgia Tech’s 2025 Utilities Master Plan calls for <strong>2 MW of new campus solar</strong> and electrifying
-        campus heating. Those projects need people who understand energy, data, buildings, and how to persuade others to
-        act.
-      </p>
-      <figure class="wide-photo">
-        <img
-          src="/images/campus-rooftop-solar.jpg"
-          width="1920"
-          height="1298"
-          loading="lazy"
-          alt="Rows of blue solar panels cover the curved roof of the Georgia Tech Aquatic Center with the Atlanta skyline in the distance."
-        />
-        <figcaption>
-          Solar panels on the roof of the Georgia Tech Aquatic Center, one of the places campus already makes its own
-          clean power. Photo:
-          <a href="https://commons.wikimedia.org/wiki/File:Georgia_Tech_Aquatic_Center_Solar_Panels.jpg">Georgia Tech Research Institute</a>,
-          <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.
-        </figcaption>
-      </figure>
+      <div class="media-row">
+        <div>
+          <h3>Efficiency works, and solar is next</h3>
+          <p>
+            That last number is the hopeful one. Chiller-plant upgrades alone save 12.7 million kWh a year. Georgia Tech’s
+            2025 Utilities Master Plan calls for <strong>2 MW of new campus solar</strong> and electrifying campus
+            heating.
+          </p>
+          <p>
+            Those projects need people who understand energy, data, buildings, and how to persuade others to act.
+          </p>
+        </div>
+        <figure class="inset-photo">
+          <img
+            src="/images/campus-solar-canopy.jpg"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            alt="Aerial view of the Kendeda Building at Georgia Tech, its roof and walkways covered by a canopy of solar panels."
+          />
+          <figcaption>
+            About 917 panels make up the Kendeda Building’s 330 kW solar canopy. Photo:
+            <a href="https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg">KBISD</a>,
+            <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
+          </figcaption>
+        </figure>
+      </div>
       <p class="cite">
         Sources:
         <a href="https://sustain.gatech.edu/impact-area-emissions/">GT Office of Sustainability, Emissions</a>;
@@ -290,20 +297,6 @@ const max = Math.max(...mix.map((m) => m.pct));
           <a href="https://sustain.gatech.edu/files/2026/02/Georgia-Tech-2025-Annual-Utility-Report-Final-1.pdf">FY2025 Annual Utility Report</a>.
         </p>
       </div>
-      <figure class="wide-photo">
-        <img
-          src="/images/campus-solar-canopy.jpg"
-          width="1920"
-          height="1080"
-          loading="lazy"
-          alt="Aerial view of the Kendeda Building at Georgia Tech, its roof and walkways covered by a canopy of solar panels."
-        />
-        <figcaption>
-          The Kendeda Building’s solar canopy: about 917 panels producing 330 kW. Photo:
-          <a href="https://commons.wikimedia.org/wiki/File:Kendeda_Building_Solar_Canopy.jpg">KBISD</a>,
-          <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
-        </figcaption>
-      </figure>
     </div>
   </section>
 
@@ -323,18 +316,36 @@ const max = Math.max(...mix.map((m) => m.pct));
 </Layout>
 
 <style>
-  .wide-photo {
-    margin: 2rem 0 0;
+  .issue-hero {
+    min-height: clamp(480px, 70vh, 640px);
+    padding: clamp(4rem, 10vw, 6.5rem) 0;
   }
-  .wide-photo img {
+  .issue-hero .copy {
+    max-width: 44rem;
+  }
+  .issue-hero .bg {
+    object-position: 30% center;
+  }
+  .media-row {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+  .inset-photo {
+    margin: 0;
+  }
+  .inset-photo img {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 460px;
+    aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: var(--radius);
+    box-shadow: 0 18px 40px rgba(0, 32, 59, 0.18);
   }
-  .wide-photo figcaption {
+  .inset-photo figcaption {
     font-size: 0.82rem;
     color: var(--muted);
     margin-top: 0.6rem;
